@@ -4,7 +4,11 @@
   "description": "This is the JavaScript library that contains ready to use collections of methods inside of different classes. These classes handles different operations like specific string methods that checks string content, array methods for filtration, iteration, etc..., object tools, DOM tools collection, Ajax collection, and so on.",
   "main": "index.js",
   "scripts": {
-    "start": "vite --port 3000 --host --open",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "dev-server": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+    "vite": "vite --port 3000 --host --open",
     "test": "vite --port 3000 --open",
     "build-doc": "jsdoc -c jsdoc.json -r .",
     "ts-compile": "tsc type.ts"
@@ -20,10 +24,35 @@
   },
   "homepage": "https://github.com/ghost160111/JavaScriptTools#readme",
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "csv-loader": "^3.0.5",
     "eslint": "^8.52.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.3",
     "jsdoc": "^4.0.2",
+    "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^9.0.0",
+    "raw-loader": "^4.0.2",
     "sass": "^1.69.4",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
     "typescript": "^5.2.2",
-    "vite": "^4.5.0"
+    "vite": "^4.5.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "javascript-tools-library": "^1.0.1"
   }
 }
