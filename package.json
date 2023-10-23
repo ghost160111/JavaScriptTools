@@ -1,0 +1,32 @@
+{
+  "name": "javascript-tools-library",
+  "version": "1.0.0",
+  "description": "This is the JavaScript library that contains ready to use collections of methods inside of different classes. These classes handles different operations like specific string methods that checks string content, array methods for filtration, iteration, etc..., object tools, DOM tools collection, Ajax collection, and so on.",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite --port 3000 --host --open",
+    "test": "vite --port 3000 --open",
+    "build-doc": "jsdoc -c jsdoc.json -r .",
+    "ts-compile": "tsc type.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghost160111/JavaScriptTools.git"
+  },
+  "author": "Jaloliddin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghost160111/JavaScriptTools/issues"
+  },
+  "homepage": "https://github.com/ghost160111/JavaScriptTools#readme",
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "jsdoc": "^4.0.2",
+    "sass": "^1.69.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  },
+  "dependencies": {
+    "javascript-tools-library": "^1.0.0"
+  }
+}
