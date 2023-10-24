@@ -2356,6 +2356,7 @@ var Types = /*#__PURE__*/function () {
     key: "checkType",
     value:
     /**
+     * Checks type of an input value, if it does not match with type, else it returns value
      * @param {string} type
      * @param {any} value
      * @param {string} exceptionMessage

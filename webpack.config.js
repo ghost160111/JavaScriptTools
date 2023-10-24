@@ -6,8 +6,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 
-const fontsDir = path.resolve(__dirname, "/src/assets/fonts");
-
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 
@@ -87,7 +85,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: "./index.html",
+      template: "index.html"
     }),
     // new CopyWebpackPlugin({
     //   patterns: [
@@ -109,7 +107,7 @@ module.exports = {
         use: cssLoader("sass-loader")
       },
       {
-        test: /\.(js|mjs)$/,
+        test: /\.(js|mjs)$/i,
         exclude: "/node_modules",
         use: {
           loader: "babel-loader",
@@ -117,7 +115,7 @@ module.exports = {
         }
       },
       {
-        test: /\.ts$/,
+        test: /\.ts$/i,
         exclude: "/node_modules",
         use: {
           loader: "babel-loader",
