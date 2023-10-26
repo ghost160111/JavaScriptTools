@@ -78,22 +78,22 @@ ClassCollection.setClassConstructor([Constructor, Class])
 
 console.log(ClassCollection.getClassConstructor("Constructor"));
 
-class Tools {
-  /** @return {boolean} */
-  static checkInstance(class1, class2) {
-    if (class1 instanceof class2) {
-      return true;
-    }
-    throw Error(`${class1} is not an instance of ${class2}`);
+function sumTo(n) {
+  let sum = 0;
+
+  for (let i = 0; i <= n; ++i) {
+    sum += i;
   }
 
-  static getAjax(url) {
-    try {
-      if (typeof url === "string") {
-        return true;
-      }
-    } catch (e) {
-      throw Error(`${e.stack}`);
-    }
-  }
+  return sum;
 }
+
+const results = [
+  sumTo(1),
+  sumTo(2),
+  sumTo(3),
+  sumTo(100000)
+];
+
+console.log(results); // [ 1, 3, 6, 5000050000 ]
+
