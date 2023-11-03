@@ -1,7 +1,12 @@
+"use strict";
+
 import WebComponent from "../WebComponent.js";
 
 class HeaderComponent extends WebComponent {
-  constructor() {
+  public node: ShadowRoot;
+  public nodeStyles: string;
+
+  public constructor() {
     super();
     this.node = this.attachShadow({mode: "open"});
     this.nodeStyles = "h1{color:red;}";

@@ -1,8 +1,9 @@
 {
   "name": "javascript-tools-library",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is the JavaScript library that contains ready to use collections of methods inside of different classes. These classes handles different operations like specific string methods that checks string content, array methods for filtration, iteration, etc..., object tools, DOM tools collection, Ajax collection, and so on.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
@@ -46,6 +47,7 @@
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "webpack": "^5.89.0",
