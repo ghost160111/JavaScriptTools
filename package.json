@@ -1,6 +1,6 @@
 {
   "name": "javascript-tools-library",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is the JavaScript library that contains ready to use collections of methods inside of different classes. These classes handles different operations like specific string methods that checks string content, array methods for filtration, iteration, etc..., object tools, DOM tools collection, Ajax collection, and so on.",
   "main": "lib/index.js",
   "type": "module",
