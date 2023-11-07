@@ -42,6 +42,7 @@ class Server {
   logServerState() {
     console.log(this.messages.serverName);
     console.log(this.messages.serverStatus);
+    this.messages.serverMessage = `Server http url: http://localhost:${this.port}`;
     console.log(this.messages.serverMessage);
   }
 }
