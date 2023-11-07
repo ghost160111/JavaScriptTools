@@ -1,6 +1,6 @@
 class Base {
-  static objCount = 0;
-  static getObjCount() {
+  private static objCount: number = 0;
+  public static getObjCount(): number {
     return this.objCount++;
   }
 
@@ -8,10 +8,10 @@ class Base {
    * @param {any} typeName                    Enter type that will be checked based on 'value' parameter
    * @param {any} value                       Enter value that will be checked based on 'typeName' parameter that you entered
    * @param {string} exceptionMessage         Optionally, enter custom exception message
-   * @param {boolean} enableExceptionHandler  Optionally, enable handling exception using try...catch approach
+   * @param {boolean} enableExceptionHandler  Optionally, enable handling exception using try...catch block
    */
-  static checkType(typeName, value, exceptionMessage, enableExceptionHandler) {
-    const checkingType = () => {  
+  public static checkType(typeName: any, value: any, exceptionMessage: string, enableExceptionHandler: boolean): any {
+    const checkingType = (): any => {  
       if (typeof value !== typeName) {
         if (exceptionMessage) {
           throw TypeError(exceptionMessage);
@@ -22,10 +22,10 @@ class Base {
       return value;
     }
 
-    const usingTryCatch = () => {
+    const usingTryCatch = (): any => {
       try {
         return checkingType();
-      } catch (error) {
+      } catch (error: any) {
         console.error(`${error.stack}`);
       }
     }
@@ -34,16 +34,12 @@ class Base {
       ? usingTryCatch()
       : checkingType();
   }
+}
 
-  /**
-   * Checks multiple list of types
-   * @param {object[]} types Enter array of types which are specified in object
-   */
-  static checkTypes(types) {
-    for (let i = 0; i < types.length; ++i) {
-      this.checkType(types[i].typeName, types[i].value, types[i].exceptionMessage, types[i].enableExceptionHandler);
-    }
-  }
+interface App extends Base {
+  appName: string;
+  appDescription: string;
+  appTechnologiesUsed: string[];
 }
 
 export default Base;

@@ -1,10 +1,14 @@
-const path = require("path");
-const HTMLWebpackPlugin = require("html-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
+import path from "path";
+import { fileURLToPath } from "url";
+import HTMLWebpackPlugin from "html-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CssMinimizerWebpackPlugin from "css-minimizer-webpack-plugin";
+import TerserWebpackPlugin from "terser-webpack-plugin";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
@@ -61,7 +65,7 @@ const babelOptions = (option) => {
   return options;
 }
 
-module.exports = {
+const WEBPACK_CONFIG = {
   context: path.resolve(__dirname, "lib"),
   mode: "development",
   entry: {
@@ -126,3 +130,5 @@ module.exports = {
     ],
   }
 }
+
+export default WEBPACK_CONFIG;
