@@ -21,4 +21,3 @@ const server = new Server(3235, [
 
 server.startServer();
 server.logServerState();
-

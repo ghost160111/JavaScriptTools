@@ -1,15 +1,17 @@
 import http from "http";
-import fs from "fs";
 
 class Server {
   port;
   routes = [];
   messages = {
     serverName: "=========== Node.js Server ============\n",
-    serverStatus: "Server status: server is running",
-    serverMessage: `Server http url: http://localhost:${this.port}/\n`
+    serverStatus: "Server status: server is running"
   };
 
+  /** 
+   * @param {number} port
+   * @param {object[]} routes
+   */
   constructor(port, routes) {
     this.port = port;
     
@@ -22,7 +24,7 @@ class Server {
     }
   }
 
-  buildServer() {
+  _buildServer() {
     const server = http.createServer((req, res) => {
       for (let i = 0; i < this.routes.length; ++i) {
         if (req.url === this.routes[i].url) {
@@ -36,7 +38,7 @@ class Server {
   }
 
   startServer() {
-    this.buildServer().listen(this.port);
+    this._buildServer().listen(this.port);
   }
 
   logServerState() {
