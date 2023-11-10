@@ -37,9 +37,7 @@ class Server {
     return server;
   }
 
-  startServer() {
-    this._buildServer().listen(this.port);
-  }
+  startServer = () => this._buildServer().listen(this.port);
 
   logServerState() {
     console.log(this.messages.serverName);
